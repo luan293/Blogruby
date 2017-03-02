@@ -1,6 +1,9 @@
 <div id="page_wrapper">
   <h1 class="title"> <%= @post.title %> </h1>
-  <p class="date"> Submitted <%= time_ago_in_words(@post.created_at) %> ago </p>  
+  <p class="date"> Submitted <%= time_ago_in_words(@post.created_at) %> ago    
+    <%=link_to 'Delete', post_path(@post), method: :delete, data: {confirm: 'Are you sure?'}, class: "button" %>
+    <%=link_to 'Edit', edit_post_path(@post), class: "button" %>
+  </p> 
   <p class="content">  <%= @post.content %> </p>
-  <p><%=  %></p>
+  
 <div>
