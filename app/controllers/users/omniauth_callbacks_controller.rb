@@ -25,4 +25,29 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
   # def after_omniauth_failure_path_for(scope)
   #   super(scope)
   # end
+  def google_oauth2
+      abc
+  end
+  def facebook
+   #ghi vao bang useromni
+        abc
+  end
+  
+  def failure
+    redirect_to root_path
+  end
+  def abc
+    #ghi vao bang useromni
+        #@useromni = Useromni.from_omniauth(request.env["omniauth.auth"])
+        #@user = User.where(email: request.env["omniauth.auth"].email)
+       # if @user.count > 0
+          #@useromni = Useromni.from_omniauth(request.env["omniauth.auth"], @user.id)
+          #sign_in_and_redirect @user, :event => :authentication
+       # else
+          @user = User.from_omniauth(request.env["omniauth.auth"])
+          sign_in_and_redirect @user, :event => :authentication
+       # end
+  end
+  
+  
 end

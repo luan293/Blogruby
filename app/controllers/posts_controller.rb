@@ -1,5 +1,4 @@
 class PostsController < ApplicationController
-  load_and_authorize_resource
   before_action :authenticate_user!
   def index
     @posts = Post.all.order('created_at DESC')
@@ -39,7 +38,7 @@ class PostsController < ApplicationController
   def destroy
     @post = Post.find(params[:id])
     @post.destroy
-    redirect_to root_path 
+    redirect_to posts_path
   end
 
   private
