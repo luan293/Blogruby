@@ -1,12 +1,14 @@
 <div id="post_content">
   <h1 class="title"> <%= @post.title %> </h1>
-  <p class="date"> Submitted <%= time_ago_in_words(@post.created_at) %> ago    
+  <p class="date"> Submitted <%= time_ago_in_words(@post.created_at) %> ago
+  <% if can? [:update, :destroy], @post %>   
     <%=link_to 'Delete', post_path(@post), method: :delete, data: {confirm: 'Are you sure?'}, class: "button" %>
     <%=link_to 'Edit', edit_post_path(@post), class: "button" %>
+  <% end %>  
   </p> 
   <p class="content">  <%= @post.content %> </p>
   
-  <div id="comments">
+  <div id="comments"> 
     <h2><%= @post.comments.count %> Comments </h2>
     <%= render @post.comments %>
     <h3>Add new comment</h3>
