@@ -34,7 +34,8 @@ class Ability
     end
     if user.role == 'none'
         can [:read, :create], Post
-        can [:update, :destroy], Post, user_id: user.id
+        can :update, Post, user_id: user.id
+        can :destroy, Post, user_id: user.id
     end
 
   end
