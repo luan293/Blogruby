@@ -255,6 +255,7 @@ DEPENDENCIES
   devise
   jbuilder (~> 2.5)
   jquery-rails
+  kaminari
   listen (~> 3.0.5)
   mini_magick
   mysql2 (>= 0.3.18, < 0.5)
@@ -263,6 +264,7 @@ DEPENDENCIES
   omniauth-google-oauth2
   puma (~> 3.0)
   rails (~> 5.0.1)
+  ransack
   sass-rails (~> 5.0)
   spring
   spring-watcher-listen (~> 2.0.0)

@@ -1,6 +1,21 @@
-<% @posts.each do |p| %>
-  <div class="post_wrapper">
-    <h1 class="title"> <%=link_to p.title, p %> </h1>
-    <p class="date"> Submitted <%= time_ago_in_words(p.created_at) %> ago </p> 
-  </div> 
+<% if current_page?(root_path) %>
+	<% @posts.each do |p| %>
+	  <div class="post_wrapper">
+	    <h1 class="title"> <%=link_to p.title, p %> </h1>
+	    <p class="date"> Submitted <%= time_ago_in_words(p.created_at) %> ago </p> 
+	  </div> 
+	<% end %>
+	<div class="post_wrapper">
+		<%= paginate @posts %>
+	</div>
+<% else %>
+	<% @posts1.each do |p| %>
+	  <div class="post_wrapper">
+	    <h1 class="title"> <%=link_to p.title, p %> </h1>
+	    <p class="date"> Submitted <%= time_ago_in_words(p.created_at) %> ago </p> 
+	  </div> 
+	<% end %>
+	<div class="post_wrapper">
+		<%= paginate @posts1 %>
+	</div>	
 <% end %>

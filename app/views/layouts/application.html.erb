@@ -15,7 +15,15 @@
         <%= image_tag "logo.svg" %>
       <% end %>
     </div>
-
+    <div class="search">
+      <% if current_page?(root_path) %>
+      <!-- :title la truong du lieu trong db can tim -->
+        <%= search_form_for @search do |f| %>
+          <%= f.search_field :title_cont %>
+          <%= f.submit %>
+        <% end %>
+      <% end %>
+    </div>
     <ul>
       <li class="category">Website</li>
       <li><%= link_to "Blog", root_path %></li>

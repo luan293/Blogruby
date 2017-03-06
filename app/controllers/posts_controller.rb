@@ -1,7 +1,12 @@
 class PostsController < ApplicationController
-  before_action :authenticate_user!
+  load_and_authorize_resource 
+  #before_action :authenticate_user!
   def index
-    @posts = Post.all.order('created_at DESC')
+    #skip_check_authorizetion
+    @posts = Post.all.page(params[:page]).per(4)
+    @search = Post.search(params[:q])
+    @posts1 = @search.result.page(params[:page]).per(4)
+    #authorize! :read, @posts
   end
 
   def new
@@ -40,7 +45,11 @@ class PostsController < ApplicationController
     @post.destroy
     redirect_to posts_path
   end
-
+  
+  #def search
+  #  @result = @search.result.includes(:name).page(params[:page]).per(4)
+  #end
+  
   private
     def post_params
       params.require(:post).permit(:title, :content)

@@ -43,7 +43,8 @@ gem 'omniauth-facebook'
 gem 'carrierwave'
 gem 'ckeditor'
 gem 'mini_magick'
-
+gem 'kaminari'
+gem 'ransack'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
