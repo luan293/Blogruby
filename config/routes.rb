@@ -9,7 +9,7 @@ Rails.application.routes.draw do
 
   root "posts#index"
 
-  #get 'search/:name' => 'posts#search', as: :search
+  get 'search' => 'search#index', as: :search
   
 end
   

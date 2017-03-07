@@ -15,15 +15,7 @@
         <%= image_tag "logo.svg" %>
       <% end %>
     </div>
-    <div class="search">
-      <% if current_page?(root_path) %>
-      <!-- :title la truong du lieu trong db can tim -->
-        <%= search_form_for @search do |f| %>
-          <%= f.search_field :title_cont %>
-          <%= f.submit %>
-        <% end %>
-      <% end %>
-    </div>
+    
     <ul>
       <li class="category">Website</li>
       <li><%= link_to "Blog", root_path %></li>
@@ -51,6 +43,8 @@
         <%= link_to "Back to All Posts", root_path %>
       <% end %>
 
+      
+    
       <% if user_signed_in? %>
         <div class="buttons">
           <%= link_to "New Post", new_post_path, class: "button" %>
@@ -62,7 +56,26 @@
         </div>
       <% end %>
     </div>
+    
+     <%#= if current_page?(root_path) || current_page?(post_path) %>
+       <!-- <div class="search"> -->
+        <!-- :title la truong du lieu trong db can tim -->
+      <%#= search_form_for @search do |f| %>
+          <%#= f.search_field :title_cont %>
+          <%#= f.search_field :title_cont %>
+          <%#= f.submit %>
+        <%# end %>
+        <!-- </div> -->
+      <%# end %>
 
+      <!--  <div class="search">
+          <%#= form_tag search_path, method: :get do%>
+            <%#= text_field_tag :q, nil %>
+            <%#= text_field_tag :a, nil %>  
+          <%#= submit_tag 'Search'%>            
+          <%# end %>
+        </div> -->
+    
     <% flash.each do |name, msg| %>
       <%= content_tag(:div, msg, class: "alert") %>
       <p class="notice"><%= notice %></p>
