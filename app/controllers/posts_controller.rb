@@ -7,7 +7,10 @@ class PostsController < ApplicationController
     #authorize! :read, @posts
     @search = Post.search(params[:q])
     @posts1 = @search.result.page(params[:page]).per(4)
-    
+    respond_to do |format|
+        format.html   
+        format.js
+    end
   end
 
   def new

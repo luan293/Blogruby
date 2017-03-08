@@ -1,13 +1,14 @@
 <%# if current_page?(root_path) || current_page?(post_path) %>
   <div class="search"> 
     <!-- :title la truong du lieu trong db can tim -->
-    <%= search_form_for @search do |f| %>
+    <%= search_form_for @search, remote: true, format: :js do |f| %>
       <%= f.search_field :title_cont %>
       <%= f.search_field :content_cont %>
-      <%= f.submit %>
+      <%= f.submit%>
     <% end %>
    </div> 
 <%#end %>
+<div id="ajaxx">
 <% if current_page?(root_path) %>
   <%= sort_link(@search, :title) %>
   <% @posts.each do |p| %>
@@ -20,6 +21,7 @@
     <%= paginate @posts %>
   </div>
 <% else %>
+
   <%= sort_link(@search, :title) %>
   <% @posts1.each do |p| %>
     <div class="post_wrapper">
@@ -31,3 +33,4 @@
     <%= paginate @posts1 %>
   </div>
 <% end %>
+</div>
