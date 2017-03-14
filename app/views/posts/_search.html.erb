@@ -1,3 +1,4 @@
+
 <% @posts1.each do |p| %>
     <div class="post_wrapper">
       <h1 class="title"> <%=link_to p.title, p %> </h1>
@@ -6,4 +7,4 @@
   <% end %>
   <div class="post_wrapper">
     <%= paginate @posts1 %>
-  </div>
+</div>

@@ -46,7 +46,12 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
        # else
           @user = User.from_omniauth(request.env["omniauth.auth"])
           sign_in_and_redirect @user, :event => :authentication
-       # end
+          #đăng nhập lần t2 sẽ không có pass, lúc đó không send mail
+          if @user.password != nil
+            ApplicationMailer.sample_email(@user).deliver
+          end         
+       # end      
+          
   end
   
   

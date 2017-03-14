@@ -26,8 +26,8 @@ permit_params :email, :password, :password_confirmation, :role
     form do |f|
       f.inputs "User Details" do
       f.input :email
-      f.input :password
-      f.input :password_confirmation
+      #f.input :password
+      #f.input :password_confirmation
       f.input :role, as: :radio, collection: {None: "none", Administrator: "admin"}
     end
       f.actions

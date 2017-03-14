@@ -45,9 +45,13 @@ gem 'ckeditor'
 gem 'mini_magick'
 gem 'kaminari'
 gem 'ransack'
+gem "letter_opener"
+gem "jquery-validation-rails"
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
+  gem 'rspec-rails'
+  gem 'rails-controller-testing'
 end
 
 group :development do

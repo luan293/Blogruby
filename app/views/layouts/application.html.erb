@@ -6,11 +6,13 @@
     <%= stylesheet_link_tag 'application', 'http://fonts.googleapis.com/css?family=Raleway:400,700' %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    
   </head>
 
   <body>
     <div id="sidebar">
     <div id="logo">
+
       <%= link_to root_path do %>
         <%= image_tag "logo.svg" %>
       <% end %>
@@ -78,7 +80,6 @@
     
     <% flash.each do |name, msg| %>
       <%= content_tag(:div, msg, class: "alert") %>
-      <p class="notice"><%= notice %></p>
     <% end %>
 
     <%= yield %>
