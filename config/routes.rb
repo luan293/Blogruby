@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  mount Ckeditor::Engine => '/ckeditor'
   devise_for :users, controllers: {sessions: 'users/sessions', registrations: 'users/registrations', passwords: 'users/passwords', :omniauth_callbacks => "users/omniauth_callbacks"}  
   #devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
@@ -9,7 +10,7 @@ Rails.application.routes.draw do
 
   root "posts#index"
 
-  get 'search' => 'search#index', as: :search
+  #get 'search' => 'search#index', as: :search
   
 end
   
