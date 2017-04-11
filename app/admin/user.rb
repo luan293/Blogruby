@@ -12,7 +12,7 @@ ActiveAdmin.register User do
 #   permitted << :other if params[:action] == 'create' && current_user.admin?
 #   permitted
 # end
-permit_params :email, :password, :password_confirmation, :role 
+  permit_params :email, :password, :password_confirmation, :role 
   index do
     column :email
     column :current_sign_in_at

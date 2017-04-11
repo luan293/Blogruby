@@ -30,12 +30,12 @@ class Ability
     # https://github.com/CanCanCommunity/cancancan/wiki/Defining-Abilities
     user ||= User.new # guest user
     if user.role == 'admin'
-        can :manage, :all
+      can :manage, :all
     end
     if user.role == 'none'
-        can [:read, :create], Post
-        can :update, Post, user_id: user.id
-        can :destroy, Post, user_id: user.id
+      can [:read, :create], Post
+      can :update, Post, user_id: user.id
+      can :destroy, Post, user_id: user.id
     end
 
   end

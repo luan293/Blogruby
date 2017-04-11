@@ -8,8 +8,8 @@ class PostsController < ApplicationController
     @search = Post.search(params[:q])
     @posts1 = @search.result.page(params[:page]).per(4)
     respond_to do |format|
-        format.html   
-        format.js
+      format.html   
+      format.js
     end
   end
 

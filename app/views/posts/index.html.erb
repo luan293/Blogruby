@@ -21,8 +21,7 @@
     <%= paginate @posts %>
   </div>
 <% else %>
-
-  <%= sort_link(@search, :title, 'Sort Title') %>
+<%= sort_link(@search, :title, 'Sort Title') %>
   <% @posts1.each do |p| %>
     <div class="post_wrapper">
       <h1 class="title"> <%=link_to p.title, p %> </h1>
